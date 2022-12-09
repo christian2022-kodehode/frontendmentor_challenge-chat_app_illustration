@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	
+	<title>Frontend Mentor | Chat App CSS Illustration challenge</title>
+	<style>
+		.attribution { font-size: 11px; text-align: center; position: fixed; bottom: 10px; left: 0; right: 0; opacity: 0.5; }
+		.attribution a { color: hsl(228, 45%, 44%); }
+	</style>
+	<link rel="stylesheet" type="text/css" href="screen.css" media="screen">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<div role="figure" class="mockup">
+		<!-- Since the code for this is a mockup that is not meant to have any semantic meaning, generic elements are used -->
+		<div class="mockup-header">
+			<span class="mockup-header_avatar-chevron">&#10096;</span>
+			<img alt="Samuel Green's avatar picture" src="images/avatar.jpg" class="mockup-header_avatar-picture" width="45" height="45" />
+			<span class="mockup-header_userinfo">
+				<span class="mockup-header_userinfo-name">Samuel Green</span>
+				<span class="mockup-header_userinfo-status">Available to Walk</span>
+			</span>
+			<span class="mockup-header_menu-icon">&#8942;</span>
+		</div>
+		<div class="mockup-log">
+			<div class="mockup-log_messages">
+				<!-- The text here was inconsistent between desktop and mobile screenshots. I've used the text supplied with the base file (which matches the desktop screenshot) -->
+				<div class="mockup-log_messages-sent">That sounds great. I’d be happy with that.</div>
+				<div class="mockup-log_messages-sent">Could you send over some pictures of your dog, please?</div>
+			</div>
+			<div class="mockup-log_gallery">
+				<img alt="It's a happy doggo" src="images/dog-image-1.jpg" class="mockup-log_gallery-picture" width="90" height="90" />
+				<img alt="Happy doggo is having a rest" src="images/dog-image-2.jpg" class="mockup-log_gallery-picture" width="90" height="90" />
+				<img alt="Happy doggo has found a stick" src="images/dog-image-3.jpg" class="mockup-log_gallery-picture" width="90" height="90" />
+			</div>
+			<div class="mockup-log_messages">
+				<div class="mockup-log_messages-received">Here are a few pictures. She’s a happy girl!</div>
+				<div class="mockup-log_messages-received">Can you make it?</div>
+			</div>
+			<div class="mockup-log_messages">
+				<div class="mockup-log_messages-sent">She looks so happy! The time we discussed works. How long shall I take her out for?</div>
+				<div class="mockup-input_option mockup-log_messages-sent">
+					<span class="mockup-input_option-description">30 minute walk</span>
+					<span class="mockup-input_option-price">$29</span>
+				</div>
+				<div class="mockup-input_option mockup-log_messages-sent">
+					<span class="mockup-input_option-description">1 hour walk</span>
+					<span class="mockup-input_option-price">$49</span>
+				</div>
+			</div>
+			<div class="mockup-input_textarea">
+				<span class="mockup-input_textarea-placeholder">Type a message…</span>
+			</div>
+		</div>
+	</div>
+
+	<main>
+		<h1>Simple booking</h1>
+		<p>Stay in touch with our dog walkers through the chat interface. This makes it easy to 
+		discuss arrangements and make bookings. Once the walk has been completed you can rate 
+		your walker and book again all through the chat.</p>
+	</main>
+	
+	<div class="attribution">
+		Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+		Coded by <a href="mailto:christian2022.kodehode@gmail.com">Christian AAA</a>.
+	</div>
+
+</body>
+</html>

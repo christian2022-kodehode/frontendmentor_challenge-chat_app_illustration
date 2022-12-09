@@ -1,0 +1,308 @@
+/* Custom properties */
+
+html {
+	--color_pale-violet: hsl(276, 100%, 81%); /* sub-heading at the top of the app UI */
+	--color_moderate-violet: hsl(276, 55%, 52%); /* chat on the left */
+	--color_desaturated-dark-violet: hsl(271, 15%, 43%); /* chat on the right */
+	--color_grayish-blue: hsl(206, 6%, 79%); /* placeholder text */
+	--color_very-dark-desaturated-violet: hsl(271, 36%, 24%); /* main heading */
+	--color_dark-grayish-violet: hsl(270, 7%, 64%); /* paragraph */
+
+	--color_light-magenta: hsl(293, 100%, 63%); /* primary background color */
+	--color_light-violet: hsl(264, 100%, 61%); /* secondary background color */
+	--gradient_magenta-violet:  linear-gradient(to right, var(--color_light-magenta), var(--color_light-violet));
+	--gradient_violet-magenta:  linear-gradient(to right, var(--color_light-violet), var(--color_light-magenta));
+
+	--color_very-dark-desaturated-violet: hsl(271, 36%, 24%); /* submit button background */
+	--color_light-grayish-violet: hsl(270, 20%, 96%); /* app background */
+	--color_very-dark-desaturated-violet: hsl(271, 36%, 24%); /* submit button background */
+	--color_very-light-magenta: hsl(289, 100%, 72%); /* radio button outline */
+}
+
+
+
+ /* element styles */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: rgb(250, 250, 250);
+	font-family: 'Rubik', sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 2px 30px;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	min-height: 100vh;
+	flex-wrap: wrap;
+}
+	/* inject top left background element */
+	body::before {
+		background-image: linear-gradient(to bottom, var(--color_light-magenta), var(--color_light-violet));
+		clip-path: path("M1-1v451c0,137.5,111.5,249,249,249s249-111.5,249-249V-1H1z");
+		content: " ";
+		display: block;
+		height: 700px;
+		position: absolute;
+		right: 50vw;
+		top: -190px;
+		width: 500px;
+		z-index: -1;
+	}
+
+	/* inject bottom right background element */
+	body::after {
+		background-image: linear-gradient(to bottom, rgb(247, 245, 250), rgb(250, 245, 251));
+		bottom: -370px;
+		clip-path: path("M499,701V250C499,112.5,387.5,1,250,1C112.5,1,1,112.5,1,250v451H499z");
+		content: " ";
+		display: block;
+		height: 700px;
+		left: 50vw;
+		position: fixed;
+		width: 500px;
+		z-index: -1;
+	}
+
+h1 {
+	color: var(--color_very-dark-desaturated-violet);
+	font-size: 40px;
+	font-weight: 500;
+	margin-bottom: 24px;
+}
+
+p {
+	color: var(--color_dark-grayish-violet);
+	line-height: 1.75;
+}
+
+main {
+	flex-basis: 200px;
+	flex-grow: 1;
+	max-width: 460px;
+	text-align: center;
+}
+
+
+/* css illustration */
+.mockup {
+	background-color: var(--color_light-grayish-violet);
+	border-radius: 30px;
+	border: 10px solid white;
+	box-shadow: 0px 10px 50px -30px black;
+	display: flex;
+	flex-basis: 247px;
+	flex-direction: column;
+	font-size: 8px;
+	margin-bottom: 62px;
+	margin-top: 62px;
+	max-width: 247px;
+	min-height: 500px;
+	pointer-events: none;
+}
+	.mockup-header {
+		align-items: center;
+		background-image: var(--gradient_violet-magenta);
+		border-radius: 20px 20px 5px 5px;
+		box-shadow: 0px 8px 8px -4px rgb(0 0 0 / 10%);
+		color: white;
+		display: flex;
+		padding-bottom: 11px;
+		padding-left: 15px;
+		padding-right: 7px;
+		padding-top: 30px;
+		position: relative;
+	}
+		/* inject "island" at the top of the phone screen */
+		.mockup-header::after {
+			background-color: white;
+			border-bottom-left-radius: 14px;
+			border-bottom-right-radius: 14px;
+			content: " ";
+			display: block;
+			height: 20px;
+			left: 0;
+			margin: 0 auto;
+			position: absolute;
+			right: 0;
+			top: -1px;
+			width: 129px;
+		}
+
+		.mockup-header_avatar-chevron {
+			font-size: 12px;
+		}
+
+		.mockup-header_avatar-picture {
+			border-radius: 50%;
+			border: 2px solid white;
+			height: 25px;
+			margin: 0 8px 0 6px;
+			width: 25px;
+		}
+
+		.mockup-header_userinfo {
+			flex-grow: 1;
+		}
+
+		.mockup-header_userinfo-name {
+			display: block;
+			font-size: 11px;
+			font-weight: 500;
+			line-height: 1.5;
+		}
+
+		.mockup-header_userinfo-status {
+			color: var(--color_pale-violet);
+		}
+
+		.mockup-header_menu-icon {
+			font-size: 12px;
+			margin: 0 8px;
+			font-weight: 700;
+		}
+
+	.mockup-log {
+		display: flex;
+		flex-direction: column;
+		padding: 11px 7px 11px 7px;
+	}
+		.mockup-log_messages {
+			align-content: flex-start;
+			display: flex;
+			flex-direction: column;
+			line-height: 1.4;
+			margin-bottom: 15px;
+		}
+			.mockup-log_messages-sent,
+			.mockup-log_messages-received {
+				border-top-left-radius: 8px;
+				border-top-right-radius: 8px;
+				flex-basis: 60%;
+				max-width: 60%;
+				padding: 6px 8px 6px 8px;
+			}
+
+			/* add margin between consecutive chat messages */
+			.mockup-log_messages-received + .mockup-log_messages-received,
+			.mockup-log_messages-sent + .mockup-log_messages-sent {
+				margin-top: 8px;
+			}
+
+			.mockup-log_messages-received {
+				align-self: flex-end;
+				background-color: white;
+				border-bottom-left-radius: 8px;
+				border-bottom-right-radius: 4px;
+				box-shadow: 0px 8px 8px -5px rgb(0 0 0 / 10%);
+				color: var(--color_desaturated-dark-violet);
+			}
+
+			.mockup-log_messages-sent {
+				background-color: hsl(283, 33%, 90%);
+				border-bottom-left-radius: 4px;
+				border-bottom-right-radius: 8px;
+				color: var(--color_moderate-violet);
+			}
+
+			.mockup-log_gallery {
+					align-self: flex-end;
+			}
+				.mockup-log_gallery-picture {
+					border-radius: 8px;
+					box-shadow: 0px 8px 8px -5px rgb(0 0 0 / 10%);
+					height: 40px;
+					margin: 0 0 6px 6px;
+					width: 40px;
+				}
+
+	.mockup-input_option {
+		align-items: center;
+		background-image: var(--gradient_magenta-violet);
+		border-radius: 10px 10px 10px 4px;
+		color: white;
+		display: flex;
+		justify-content: space-between;
+		max-width: 75%;
+		padding: 10px 17px 10px 8px;
+		line-height: 1;
+	}
+
+	/* inject faux radio button */
+	.mockup-input_option::before {
+		border-radius: 50%;
+		border: 1px solid var(--color_very-light-magenta);
+		content: " ";
+		display: block;
+		flex-shrink: 1;
+		height: 10px;
+		width: 10px;
+	}
+
+	.mockup-input_option-description {
+		flex-grow: 1;
+		padding-left: 8px;
+	}
+
+	.mockup-input_option-price {
+		flex-shrink: 1;
+		font-size: 150%;
+		font-weight: 500;
+	}
+
+	.mockup-input_textarea {
+		align-items: center;
+		background-color: white;
+		border-radius: 50px;
+		color: var(--color_grayish-blue);
+		display: flex;
+		font-size: 8.8px;
+		justify-content: space-between;
+		line-height: 1;
+		padding: 6px 5px 5px 19px;
+	}
+
+	/* inject faux submit button */
+	.mockup-input_textarea::after {
+		background-color: var(--color_very-dark-desaturated-violet);
+		border-radius: 50%;
+		color: white;
+		content: "›";
+		display: block;
+		font-size: 20px;
+		text-align: center;
+		line-height: 24px;
+		width: 24px;
+	}
+
+
+/* Media queries */
+@media (min-width: 376px) {
+
+	body {
+		padding-left: 10vw;
+	}
+
+	/* top left background element */
+	body::before {
+		right: 71vw;
+		top: 0;
+	}
+
+	/* bottom right background element */
+	body::after {
+		bottom: 0;
+		left: 77vw;
+	}
+
+	main {
+		margin-left: 9vw;
+		text-align: start;
+	}
+
+
+}
